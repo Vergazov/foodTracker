@@ -15,20 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('breakfastPhoto')
                 ->nullable();
-            $table->string('breakfastComm')
-                ->nullable();
             $table->string('lunchPhoto')
-                  ->nullable();
-            $table->string('lunchComm')
                   ->nullable();
             $table->string('dinnerPhoto')
                   ->nullable();
-            $table->string('dinnerComm')
-                  ->nullable();
             $table->string('snack1Photo')
                   ->nullable();
-            $table->string('snack1Comm')
-                  ->nullable();
+            $table->string('snack2Photo')
+                ->nullable();
+            $table->string('snack3Photo')
+                ->nullable();
+            $table->string('comment')
+                ->nullable();
             $table->timestamps();
         });
     }

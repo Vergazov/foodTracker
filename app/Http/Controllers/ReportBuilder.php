@@ -7,17 +7,17 @@ namespace App\Http\Controllers;
 class ReportBuilder
 {
     public $breakfastPhoto = false;
-    public $breakfastComm = false;
     public $lunchPhoto = false;
-    public $lunchComm = false;
     public $dinnerPhoto = false;
-    public $dinnerComm = false;
     public $snack1Photo = false;
-    public $snack1Comm = false;
+    public $snack2Photo = false;
+    public $snack3Photo = false;
+    public $comment = false;
 
     protected $request;
 
     public function __construct($request){
+//        dd($request);
         $this->request = $request;
     }
 
@@ -27,21 +27,10 @@ class ReportBuilder
             return $this;
         }
     }
-    public function addBreakfastComm(){
-        if(isset($this->request['breakfastComm'])){
-            $this->breakfastComm = $this->request['breakfastComm'];
-            return $this;
-        }
-    }
+
     public function addLunchPhoto(){
         if(isset($this->request['lunchPhoto'])){
             $this->lunchPhoto = $this->request['lunchPhoto'];
-            return $this;
-        }
-    }
-    public function addLunchComm(){
-        if(isset($this->request['lunchComm'])){
-            $this->lunchComm = $this->request['lunchComm'];
             return $this;
         }
     }
@@ -51,22 +40,30 @@ class ReportBuilder
             return $this;
         }
     }
-    public function addDinnerComm(){
-        if(isset($this->request['dinnerComm'])){
-            $this->dinnerComm = $this->request['dinnerComm'];
-            return $this;
-        }
-    }
     public function addSnack1Photo(){
         if(isset($this->request['snack1Photo'])){
             $this->snack1Photo = $this->request['snack1Photo'];
             return $this;
         }
     }
-    public function addSnack1Comm(){
-        if(isset($this->request['snack1Comm'])){
-            $this->snack1Comm = $this->request['snack1Comm'];
+    public function addSnack2Photo(){
+        if(isset($this->request['snack2Photo'])){
+            $this->snack2Photo = $this->request['snack2Photo'];
             return $this;
+        }
+    }
+    public function addSnack3Photo(){
+        if(isset($this->request['snack3Photo'])){
+            $this->snack3Photo = $this->request['snack3Photo'];
+            return $this;
+        }
+    }
+    public function addComment(){
+        if(isset($this->request['comment'])){
+            $this->comment = $this->request['comment'];
+            return $this;
+        }else {
+            return 0;
         }
     }
 

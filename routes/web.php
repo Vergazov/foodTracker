@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','index');
+Route::view('/','index')->name('reports.index');
 
 Route::post('/reports', [FoodTrackController::class, 'store'])->name('reports.store');
 Route::get('/show', [FoodTrackController::class, 'show'])->name('reports.show');
+Route::get('/weekReport', [FoodTrackController::class, 'getWeekReport'])->name('reports.weekReport');
